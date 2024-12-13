@@ -1,0 +1,69 @@
+#todo-list {
+    padding: 0;
+}
+Horizontal {
+    padding: 0;
+    height: auto;
+}
+Checkbox {
+    width: 1fr;  /* Allow checkbox to take available space */
+    background: red 10%;
+    margin-bottom: 1;
+}
+#item-button {
+    width: auto;  /* Keep button width compact */
+    background: red 10%;
+    border: tall black;
+    color: black;
+}
+#add {
+    width: auto;  /* Keep button width compact */
+    background: green 10%;
+    border: tall black;
+    color: black;
+    margin-top: 1;
+    margin-bottom: 1;
+}
+#quit {
+    width: auto;  /* Keep button width compact */
+    background: red 10%;
+    border: tall black;
+    color: black;
+}
+Input {
+    margin-top: 1;
+    margin-bottom: 1;
+    background: blue 20%;
+    color: black;
+    width: 1fr;
+}
+
+Screen {
+    background: white;
+    color: black;
+    padding: 1;
+}
+
+Header {
+    background: white;
+    color: black;
+}
+
+Footer {
+    background: white;
+    color: black;
+}
+
+#output {
+    margin-bottom: 1;
+    margin-left: 1;
+    text-style: italic;
+}
+
+#quit {
+    margin-top: 1;
+}
+
+VerticalScroll {
+    height: auto;
+}

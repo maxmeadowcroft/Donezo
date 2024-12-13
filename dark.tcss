@@ -1,0 +1,66 @@
+#todo-list {
+    padding: 0;
+}
+
+Horizontal {
+    padding: 0;
+    height: auto;
+    align: center middle;
+}
+
+Checkbox {
+    width: 1fr;  /* Allow checkbox to take available space */
+    background: red 80%;
+    margin-bottom: 1;
+}
+
+#complete {
+    background: green 60%;
+}
+
+#item-button {
+    width: auto;  /* Keep button width compact */
+    background: red 60%;
+    border: tall black;
+}
+#add {
+    width: auto;  /* Keep button width compact */
+    background: green 60%;
+    border: tall black;
+    color: black;
+}
+
+Input {
+    margin-top: 1;
+    margin-bottom: 1;
+    background: white;
+    color: black;
+    width: 1fr;
+}
+
+Screen {
+    background: black;
+    color: white;
+    padding: 1;
+}
+
+Header {
+    background: black;
+    color: white;
+}
+
+Footer {
+    background: black;
+    color: white;
+}
+
+#output {
+    margin-bottom: 1;
+    margin-left: 1;
+    text-style: italic;
+    color: white;
+}
+
+#quit {
+    margin-top: 1;
+}
