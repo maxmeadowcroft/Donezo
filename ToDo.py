@@ -1,11 +1,17 @@
 import csv
+import sys
 from textual import on
 from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll, Horizontal
 from textual.widgets import Static, Header, Footer, Checkbox, Input, Button
 
+def resource_path(relative_path):
+    """ Get the absolute path to the resource for PyInstaller. """
+    base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))
+    return os.path.join(base_path, relative_path)
+
 class ToDo(App):
-    CSS_PATH = "light.tcss"
+    CSS_PATH = "dark.tcss"
     watch_css = True
     csv_file = "todo_items.csv"
 
@@ -45,9 +51,9 @@ class ToDo(App):
                 for row in reader:
                     checkbox = Checkbox(row["Item"], value=row["Completed"] == "True")
                     if row["Completed"] == "True":
-                        checkbox.styles.background = "green 10%"
+                        checkbox.styles.background = "green 80%"
                     else:
-                        checkbox.styles.background = "red 10%"
+                        checkbox.styles.background = "red 80%"
                     todo_list.mount(
                         Horizontal(
                             checkbox,
@@ -61,9 +67,9 @@ class ToDo(App):
         # Update the item's appearance when the checkbox state changes
         checkbox = event.checkbox
         if checkbox.value:
-            checkbox.styles.background = "green 10%"
+            checkbox.styles.background = "green 80%"
         else:
-            checkbox.styles.background = "red 10%"
+            checkbox.styles.background = "red 80%"
 
     def add_item(self, input_name: str) -> None:
         todo_list = self.query_one("#todo-list", VerticalScroll)
@@ -81,6 +87,7 @@ class ToDo(App):
     def on_input_submitted(self) -> None:
         input = self.query_one(Input)
         self.add_item(input.value)
+        input.value = ""
 
     @on(Button.Pressed, "#item-button")
     def on_button_pressed(self) -> None:

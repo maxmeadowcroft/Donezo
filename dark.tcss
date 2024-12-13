@@ -27,7 +27,9 @@ Checkbox {
     width: auto;  /* Keep button width compact */
     background: green 60%;
     border: tall black;
-    color: black;
+    color: white;
+    margin-top: 1;
+    margin-bottom: 1;
 }
 
 Input {
@@ -63,4 +65,5 @@ Footer {
 
 #quit {
     margin-top: 1;
+    margin-left: 1;
 }
