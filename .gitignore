@@ -1,1 +1,4 @@
-.idea
+build/
+DarkToDo.spec
+LightToDo.spec
+ToDo.spec
