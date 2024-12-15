@@ -11,7 +11,7 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 class ToDo(App):
-    CSS_PATH = "dark.tcss"
+    CSS_PATH = "light.tcss"
     watch_css = True
     csv_file = "todo_items.csv"
 
@@ -35,7 +35,8 @@ class ToDo(App):
         rows = []
         for child in todo_list.children:
             if isinstance(child, Horizontal):
-                checkbox = child.query(Checkbox).first()
+                # Find the Checkbox directly
+                checkbox = next((widget for widget in child.children if isinstance(widget, Checkbox)), None)
                 if checkbox:
                     rows.append([checkbox.label, checkbox.value])
         with open(self.csv_file, mode="w", newline="") as file:
@@ -51,9 +52,9 @@ class ToDo(App):
                 for row in reader:
                     checkbox = Checkbox(row["Item"], value=row["Completed"] == "True")
                     if row["Completed"] == "True":
-                        checkbox.styles.background = "green 80%"
+                        checkbox.styles.background = "green 10%"
                     else:
-                        checkbox.styles.background = "red 80%"
+                        checkbox.styles.background = "red 10%"
                     todo_list.mount(
                         Horizontal(
                             checkbox,
@@ -67,9 +68,9 @@ class ToDo(App):
         # Update the item's appearance when the checkbox state changes
         checkbox = event.checkbox
         if checkbox.value:
-            checkbox.styles.background = "green 80%"
+            checkbox.styles.background = "green 10%"
         else:
-            checkbox.styles.background = "red 80%"
+            checkbox.styles.background = "red 10%"
         self.save_to_csv()
 
     def add_item(self, input_name: str) -> None:
