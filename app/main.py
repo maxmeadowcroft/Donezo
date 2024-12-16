@@ -11,9 +11,9 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 class ToDo(App):
-    CSS_PATH = "light.tcss"
+    CSS_PATH = "styles/light.tcss"
     watch_css = True
-    csv_file = "todo_items.csv"
+    csv_file = "../data/todo_items.csv"
 
     def compose(self) -> ComposeResult:
         # Import the header and footer
